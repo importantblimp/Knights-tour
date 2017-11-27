@@ -22,6 +22,14 @@ This document will explain the algorithm described in Ian Parberry's 1997 paper 
 
 My motivation for writing this document stems from the lack of accessible material on Parberry's paper online. I found the paper itself to be very dense and often lacking in explicit notes on points of importance. Other resources available online I also found to be vague or used excessive jargon relating to graph theory. I hope, therefore, to explain the algorithm and the concepts within the paper in a manner suitable for those not familiar with the notation used.
 
+\section{The Knight's tour}
 
+Parberry describes a tour as ``A \emph{knight's tour} is a series of moves made by a knight visiting each square of an $n \times n$ chessboard exactly once''. This means we have a knight, who can move in a particular way that we will describe later, and this knight is somewhere on a square board that has some width and some height that we'll call $n$ - our goal in creating a tour is to have this knight move to every square on the board without moving to a square that he's already been to.
+
+Parberry notes that a \emph{knight's tour problem} is about creating a tour for a knight on some specific board size, but the distinction between a knight's tour and a knight's tour \emph{problem} is not important for our purposes and I will use the two interchangeably.
+
+Parberry describes ``A knight's tour is called \emph{closed} if the last square visited is also reachable from the first square by a knight's move, and \emph{open} otherwise''. For a tour to be closed the starting square must be reachable by a \emph{single} move. We will not include this final move in our discussions or the reference implementation, but it would be valid to do so.
+
+\subsection{Tour representation}
 
 \end{document}
