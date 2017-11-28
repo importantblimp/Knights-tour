@@ -32,4 +32,33 @@ Parberry describes ``A knight's tour is called \emph{closed} if the last square 
 
 \subsection{Tour representation}
 
+The representation used in the paper is (verbatim) $G = (V,E)$, where: $V = \{(i,j)\ |\ 1 \le i,j \le n\}$, and $E = \{((i,j),(k,l))\ |\ \{|i-k|,|j-l|\} = \{1,2\}\}$.
+
+This notation is very dense so I'll go through it step by step.
+
+G is a graph, represented by a pair of vertices (V) and edges (E). The graph in this case is the set of possible moves that could be made from any square to any other square. The vertices are squares on the chessboard and the edges are possible moves from a vertex to another vertex.
+
+The specific representation of the graph used in the paper is not especially important for the reference implementation, because I have chosen a simpler representation, or for understanding the V or E representations.
+
+Parberry defines the vertices (V) as a pair $i$ and $j$ where both are between 1 and $n$, inclusive. He does not specify where (1,1) is located but his later discussion assumes that it is located in the bottom left of the board. This means the top left is, assuming $i$ is the $x$ axis and $j$ is the $y$ axis, (1, $n$). The top right is ($n$, $n$), and the bottom right ($n$, 1).
+
+% TODO Figure of proposed layout and comment on here.
+
+The edges, as Parberry defines them, are a pair of pairs denoting the start and end points where the difference between the points is 1 exclusive-or 2. Let's unpack what this means. The left-hand pair is the starting square on the board, and the right-hand pair the ending position. The differences between these two squares must be 1 or 2 in the $x$ axis, and the other number of 1 or 2 in the $y$ axis. This means if the knight moves 1 up or down, he must move 2 left or right. Similarly if he moves 2 up or down he must move 1 left or right. The knight may only move from a square on the board to another square on the board.
+
+% TODO Figure demonstrating valid knight movements, with set including off board movement.
+
+\subsection{Other relevant tour details}
+
+Parberry discusses many other points relating to the Knight's tour and it's history in his introduction. He cites many other researchers, some of whose results are duplicated here. Refer to the original paper for more details.
+
+\begin{itemize}
+\item There is a closed tour for all boards $n \ge 6$, where $n$ is even.
+\item There is an open tour for all boards $n \ge 5$
+% TODO \item A \emph{structured} knights tour has moves as in Figure % Add structured figure 
+\end{itemize}
+
+\section{A divide and conquer algorithm}
+
+
 \end{document}
