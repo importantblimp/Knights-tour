@@ -50,13 +50,16 @@ The edges, as Parberry defines them, are a pair of pairs denoting the start and 
 
 \subsection{Other relevant tour details}
 
-Parberry discusses many other points relating to the Knight's tour and it's history in his introduction. He cites many other researchers, some of whose results are duplicated here. Refer to the original paper for more details.
+Parberry discusses many other points relating to the Knight's tour and it's history in his introduction. He cites many other researchers, some of whose results are duplicated here. Refer to the original paper for more details. Parberry covers \emph{structured} tours and the $n \times (n + 2)$ board tour in the divide and conquer section but I cover it here for cohesive purposes.
 
 \begin{itemize}
-\item There is a closed tour for all boards $n \ge 6$, where $n$ is even.
-\item There is an open tour for all boards $n \ge 5$
 % TODO \item A \emph{structured} knights tour has moves as in Figure % Add structured figure 
+\item There is a structured closed tour for all boards $n \ge 6$, where $n$ is even.
+\item There is a structured tour for $n \times (n + 2)$ where $n \ge 6$, and $n$ is even.
+\item There is an open tour for all boards $n \ge 5$
 \end{itemize}
+
+We do not use the fact that an open tour exists, but it is useful to know if using other methods for creating Knight's tours.
 
 \section{A divide and conquer algorithm}
 
