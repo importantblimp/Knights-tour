@@ -63,5 +63,14 @@ We do not use the fact that an open tour exists, but it is useful to know if usi
 
 \section{A divide and conquer algorithm}
 
+Parberry provides his algorithm in the form of a proof. I will restate his proof as steps in an algorithm, and then explain why each step is needed.
 
+Parberry defines $k$ to be $\frac{n}{4}$.
+Where $n$ is divisible by 4, the four quadrants are $2k \times 2k$ squares. That is, we divide the board in half in each direction.
+
+Each side divisible by $\frac{n - 2}{4}$ is divided into $2k \times 2(k + 1)$ or $2(k + 1) \times 2k$. We determine which to use by which fits within the dimensions. The layout is then, for $A = 2k$, $B = 2k + 2$ where $k = \frac{n - 2}{4}$ A x B, B x B, A x A, and B x A going from the top left to the bottom right.
+
+Each side divisible by $n = 4k + 2$ is divided into the same as previously but in a different arangment: A x A, A x B, A x A, A x B.
+
+The degenerate case where $n$ is divisible by 4 is where $A = B$ and either layout may be used.
 \end{document}
