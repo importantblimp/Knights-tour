@@ -73,4 +73,12 @@ Each side divisible by $\frac{n - 2}{4}$ is divided into $2k \times 2(k + 1)$ or
 Each side divisible by $n = 4k + 2$ is divided into the same as previously but in a different arangment: A x A, A x B, A x A, A x B.
 
 The degenerate case where $n$ is divisible by 4 is where $A = B$ and either layout may be used.
+
+% There are two cases that we need to consider, depending on the board shape. The starting board is always $n \times n$ because this is the shape of the board we are assumed to have started with. It is possible, after splitting the original board, to have an $n \times (n + 2)$ board and this is the other case we consider.
+
+%To determine whether the board is square, we can compare the board width and height.
+% |width - height| == 2 gives us a board shaped $n \times (n + 2)$ or $(n + 2) \times n$. That is, a non square board but one that is higher than it is wide, and wider than it is high respectively.
+
+% The board is divided into four sections. There are four cases for determining the size of each of the sections
+
 \end{document}
