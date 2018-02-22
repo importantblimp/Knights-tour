@@ -36,17 +36,39 @@ The representation used in the paper is (verbatim) $G = (V,E)$, where: $V = \{(i
 
 This notation is very dense so I'll go through it step by step.
 
-G is a graph, represented by a pair of vertices (V) and edges (E). The graph in this case is the set of possible moves that could be made from any square to any other square. The vertices are squares on the chessboard and the edges are possible moves from a vertex to another vertex.
+\subsubsection{Graphs}
 
-The specific representation of the graph used in the paper is not especially important for the reference implementation, because I have chosen a simpler representation, or for understanding the V or E representations.
+G is a graph. A graph is a structure that has vertices and edges. A vertex (the singular of vertices) is a point on the structure that can be accessed from other vertices by moving across an edge. Edges are connections between vertices, and there may or may not be connections between any two vertices. Edges can be (and in this case are) one way - this makes the graph ``directed''.
 
-Parberry defines the vertices (V) as a pair $i$ and $j$ where both are between 1 and $n$, inclusive. He does not specify where (1,1) is located but his later discussion assumes that it is located in the bottom left of the board. This means the top left is, assuming $i$ is the $x$ axis and $j$ is the $y$ axis, (1, $n$). The top right is ($n$, $n$), and the bottom right ($n$, 1).
+\subsubsection{Vertices}
+
+In the case of the knight's tour the vertices represent squares on the board. Recall that Parberry represents the vertices as:
+
+$$V = \{(i,j)\ |\ 1 \le i,j \le n\}$$
+
+This means that every vertex is a pair $i$ and $j$, where $1 \le i$ and $j \le n$.
+
+Parberry does not specify where square (1,1) is located on the board but his later discussion assumes that it is located in the bottom left of the board. If we assume that $i$ is the $x$ axis and $j$ is the $y$ axis then the top left is (1, $n$). The top right is ($n$, $n$), and the bottom right ($n$, 1).
 
 % TODO Figure of proposed layout and comment on here.
 
-The edges, as Parberry defines them, are a pair of pairs denoting the start and end points where the difference between the points is 1 exclusive-or 2. Let's unpack what this means. The left-hand pair is the starting square on the board, and the right-hand pair the ending position. The differences between these two squares must be 1 or 2 in the $x$ axis, and the other number of 1 or 2 in the $y$ axis. This means if the knight moves 1 up or down, he must move 2 left or right. Similarly if he moves 2 up or down he must move 1 left or right. The knight may only move from a square on the board to another square on the board.
+\subsubsection{A refresher on Knights movement}
 
-% TODO Figure demonstrating valid knight movements, with set including off board movement.
+The knight can move 1 square to the left or right, and 2 squares up or down; or 2 squares to the left or right and 1 square up or down. The knight must start at a square and end at a square, this means that he cannot move off the board.
+
+% TODO Figure of 3 examples of knights movement: (1,1), middle, an edge of the board
+
+\subsubsection{Edges}
+
+Edges of a graph (ways of moving between vertices) are the valid moves that the knight can make. Parberry defines each edge as:
+
+$$E = \{((i,j),(k,l))\ |\ \{|i-k|,|j-l|\} = \{1,2\}\}$$
+
+An edge, as Parberry defines it, consists of two points. The first point, on the left, is the square the knight is on ($i$,$j$). The second point is the square that the knight ends up on ($k$,$l$).
+
+The differences between the start and end squares must be 1 or 2 in the $x$ axis, and the other number of 1 or 2 in the $y$ axis. This means if the knight moves 1 up or down, he must move 2 left or right. Similarly if he moves 2 up or down he must move 1 left or right.
+
+The notation literally reads ``The set of the absolute differences between `$i$ and $k$' and `$j$ and $l$' is the set containing 1 and 2''. This is just a concise way of expressing the ways that the knight can move.
 
 \subsection{Other relevant tour details}
 
