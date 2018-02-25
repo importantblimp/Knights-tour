@@ -83,7 +83,33 @@ Parberry discusses many other points relating to the Knight's tour and it's hist
 
 We do not use the fact that an open tour exists, but it is useful to know if using other methods for creating Knight's tours.
 
-\section{A divide and conquer algorithm}
+\section{Divide and conquer}
+
+\subsection{Divide an conquer algorithms generally}
+
+
+
+\subsection{The knight's tour}
+
+The base case for the knight's tour are a set of structured tours of sizes:
+\begin{itemize}
+\item $6 \times 6$
+\item $6 \times 8$
+\item $8 \times 8$
+\item $8 \times 10$
+\item $10 \times 10$
+\item $10 \times 12$
+\item $6 \times 7$
+\item $7 \times 8$
+\item $8 \times 9$
+\item $9 \times 10$
+\item $10 \times 11$
+\item $11 \times 12$
+\end{itemize}
+
+% Why are these tours important? Some are nxn others are nxn+2 but some are nxn+1
+
+The idea here is to gradually reduce the problem, through dividing the board, to one that we can solve. In this case, we can solve a large number of problems - and because they are all structured solutions we can put them back together again.
 
 Parberry provides his algorithm in the form of a proof. I will restate his proof as steps in an algorithm, and then explain why each step is needed.
 
