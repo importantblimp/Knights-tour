@@ -87,7 +87,16 @@ We do not use the fact that an open tour exists, but it is useful to know if usi
 
 \subsection{Divide an conquer algorithms generally}
 
+Divide and conquer algorithms have:
+\begin{enumerate}
+\item A base case
+\item A splitting function
+\item A joining function
+\end{enumerate}
 
+The base case is the situation in which we stop splitting - these are the cases that we can solve directly.
+The splitting function is how we divide the problem into smaller problems (with the goal of getting to a base case).
+The joining function is how we join all of the solved cases back together again.
 
 \subsection{The knight's tour}
 
